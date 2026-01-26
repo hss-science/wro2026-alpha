@@ -96,9 +96,12 @@ static HAL_StatusTypeDef set_abs_power(dev_motor_t port, double power){
 	power /= 100.0;
 	switch(port){
 	case DEV_MOTOR_1:
-		hhrtim.Instance->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_C].CMP1xR = (int)(power*16000+0.5);
-		hhrtim.Instance->sCommonRegs.CR2 |= HRTIM_CR2_TASWU;
+	{
+		uint32_t period = hhrtim.Instance->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_C].PERxR;
+		hhrtim.Instance->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_C].CMP1xR = (uint32_t)(power*period+0.5);
+		hhrtim.Instance->sCommonRegs.CR2 |= HRTIM_CR2_TCSWU;
 		break;
+	}
 	case DEV_MOTOR_2:
 		break;
 	case DEV_MOTOR_3:
