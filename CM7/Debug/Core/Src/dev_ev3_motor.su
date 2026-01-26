@@ -1,0 +1,6 @@
+../Core/Src/dev_ev3_motor.c:58:13:gpio_pair_write	24	static
+../Core/Src/dev_ev3_motor.c:62:26:set_sign	16	static
+../Core/Src/dev_ev3_motor.c:87:26:set_abs_power	24	static
+../Core/Src/dev_ev3_motor.c:118:6:dev_motor_set_power	24	static
+../Core/Src/dev_ev3_motor.c:144:6:dev_motor_stop	24	static
+../Core/Src/dev_ev3_motor.c:148:9:dev_motor_get_counts	24	static

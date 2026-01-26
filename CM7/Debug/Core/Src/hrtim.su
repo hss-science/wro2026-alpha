@@ -1,0 +1,4 @@
+../Core/Src/hrtim.c:30:6:MX_HRTIM_Init	144	static
+../Core/Src/hrtim.c:115:6:HAL_HRTIM_MspInit	216	static
+../Core/Src/hrtim.c:142:6:HAL_HRTIM_MspPostInit	40	static
+../Core/Src/hrtim.c:170:6:HAL_HRTIM_MspDeInit	16	static
