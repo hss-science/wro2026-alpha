@@ -34,7 +34,7 @@ const gpio_pair_t EN[] = {
 		{GPIOB,GPIO_PIN_0},
 		{GPIOB,GPIO_PIN_12},
 		{GPIOC,GPIO_PIN_12},
-		{GPIOC,GPIO_PIN_12},
+		{GPIOD,GPIO_PIN_0},
 		{GPIOD,GPIO_PIN_4},
 		{GPIOD,GPIO_PIN_11},
 };
