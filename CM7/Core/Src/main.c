@@ -172,9 +172,9 @@ Error_Handler();
 	PCF8574_Write(0x1);
 	count++;
 	if(count % 2 == 0){
-		dev_motor_set_power(DEV_MOTOR_1, 10.0);
+		dev_motor_set_power(DEV_MOTOR_1, 100.0);
 	}else{
-		dev_motor_set_power(DEV_MOTOR_1, 10.0);
+		dev_motor_set_power(DEV_MOTOR_1, 0.1);
 	}
 	HAL_Delay(1000);
 

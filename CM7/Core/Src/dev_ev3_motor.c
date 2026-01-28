@@ -34,7 +34,7 @@ const gpio_pair_t EN[] = {
 		{GPIOB,GPIO_PIN_0},
 		{GPIOB,GPIO_PIN_12},
 		{GPIOC,GPIO_PIN_12},
-		{GPIOC,GPIO_PIN_12},
+		{GPIOD,GPIO_PIN_0},
 		{GPIOD,GPIO_PIN_4},
 		{GPIOD,GPIO_PIN_11},
 };
@@ -98,7 +98,7 @@ static HAL_StatusTypeDef set_abs_power(dev_motor_t port, double power){
 	case DEV_MOTOR_1:
 	{
 		uint32_t period = hhrtim.Instance->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_C].PERxR;
-		hhrtim.Instance->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_C].CMP1xR = (uint32_t)(power*period+0.5);
+		hhrtim.Instance->sTimerxRegs[HRTIM_TIMERINDEX_TIMER_C].CMP1xR = (uint32_t)(int)(power*((float)period)+0.5);
 		hhrtim.Instance->sCommonRegs.CR2 |= HRTIM_CR2_TCSWU;
 		break;
 	}
