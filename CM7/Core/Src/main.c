@@ -26,7 +26,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "app_main.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -71,13 +71,6 @@ static void MPU_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-// PCF8574_I2C_Address
-
-#include <stdint.h>
-
-#include "pcf8574.h"
-#include "dev_ev3_motor.h"
-
 /* USER CODE END 0 */
 
 /**
@@ -153,12 +146,7 @@ Error_Handler();
   MX_I2C1_Init();
   MX_HRTIM_Init();
   /* USER CODE BEGIN 2 */
-  HAL_HRTIM_WaveformOutputStart(&hhrtim, HRTIM_OUTPUT_TC2);
-  HAL_HRTIM_WaveformCounterStart(&hhrtim, HRTIM_TIMERID_MASTER | HRTIM_TIMERID_TIMER_C);
-
-  /*uint8_t a = 0, b = 1;
-  uint8_t temp;*/
-  int count = 0;
+  App_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -169,21 +157,7 @@ Error_Handler();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	PCF8574_Write(0x1);
-	count++;
-	if(count % 2 == 0){
-		dev_motor_set_power(DEV_MOTOR_1, 100.0);
-	}else{
-		dev_motor_set_power(DEV_MOTOR_1, 0.1);
-	}
-	HAL_Delay(1000);
-
-	/*PCF8574_Write(a);
-	temp = b;
-	b = a + b;
-	a = temp;
-	HAL_Delay(5);*/
-	  //HAL_GPIO_WritePin(GPIOE, GPIO_PIN_7, GPIO_PIN_SET);
+  App_Loop();
   }
   /* USER CODE END 3 */
 }

@@ -9,6 +9,7 @@
 #define SRC_DEV_EV3_MOTOR_H_
 
 #include <stdint.h>
+#include "main.h"
 #include "i2c.h"
 #include "gpio.h"
 #include "hrtim.h"
