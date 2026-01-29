@@ -10,4 +10,8 @@ extern "C" {
 
 HAL_StatusTypeDef PCF8574_Write(uint8_t data);
 
+#ifdef __cplusplus
+}
+#endif
+
 #endif // UNIQUE_NAME_H の終わり
