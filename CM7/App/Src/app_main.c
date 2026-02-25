@@ -5,6 +5,9 @@
 #include "dev_ev3_motor.h"
 #include "stm32h7xx_hal.h"
 
+#include "vl53l5cx_api.h"
+#include "vl53l5cx_platform.h"
+
 void App_Init(void)
 {
     HAL_HRTIM_WaveformOutputStart(&hhrtim, HRTIM_OUTPUT_TC2);
